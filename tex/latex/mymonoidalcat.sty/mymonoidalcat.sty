@@ -1,4 +1,4 @@
-\newcommand{\unit}[2]{
+\newcommand{\lev}[2]{
     % ノード b の座標を取得
     \path (#1); \pgfgetlastxy{\bx}{\by};
 
@@ -20,7 +20,7 @@
     \draw[->-=0.2,->-=0.85] (#2) .. controls (y) and (x) .. (#1);
 }
 
-\newcommand{\counitinv}[2]{
+\newcommand{\rev}[2]{
     % ノード b の座標を取得
     \path (#1); \pgfgetlastxy{\bx}{\by};
 
@@ -42,7 +42,7 @@
     \draw[->-=0.2,->-=0.85] (#1) .. controls (x) and (y) .. (#2);
 }
 
-\newcommand{\counit}[2]{
+\newcommand{\lcoev}[2]{
     % ノード b の座標を取得
     \path (#1); \pgfgetlastxy{\bx}{\by};
 
@@ -64,7 +64,7 @@
     \draw[->-=0.2,->-=0.85] (#2) .. controls (y) and (x) .. (#1);
 }
 
-\newcommand{\unitinv}[2]{
+\newcommand{\rcoev}[2]{
     % ノード b の座標を取得
     \path (#1); \pgfgetlastxy{\bx}{\by};
 
