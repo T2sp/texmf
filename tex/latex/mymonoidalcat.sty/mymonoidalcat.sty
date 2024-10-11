@@ -1,4 +1,4 @@
-\newcommand{\lev}[2]{
+\newcommand{\LEV}[2]{
     % ノード b の座標を取得
     \path (#1); \pgfgetlastxy{\bx}{\by};
 
@@ -20,7 +20,7 @@
     \draw[->-=0.25,->-=0.75] (#2) .. controls (y) and (x) .. (#1);
 }
 
-\newcommand{\rev}[2]{
+\newcommand{\REV}[2]{
     % ノード b の座標を取得
     \path (#1); \pgfgetlastxy{\bx}{\by};
 
@@ -42,7 +42,7 @@
     \draw[->-=0.25,->-=0.75] (#1) .. controls (x) and (y) .. (#2);
 }
 
-\newcommand{\lcoev}[2]{
+\newcommand{\LCOEV}[2]{
     % ノード b の座標を取得
     \path (#1); \pgfgetlastxy{\bx}{\by};
 
@@ -64,7 +64,7 @@
     \draw[->-=0.25,->-=0.75] (#2) .. controls (y) and (x) .. (#1);
 }
 
-\newcommand{\rcoev}[2]{
+\newcommand{\RCOEV}[2]{
     % ノード b の座標を取得
     \path (#1); \pgfgetlastxy{\bx}{\by};
 
@@ -85,3 +85,15 @@
 
     \draw[->-=0.25,->-=0.75] (#1) .. controls (x) and (y) .. (#2);
 }
+
+\newcommand{\lev}{\mathrm{ev}^{\mathrm{L}}}
+\newcommand{\lcoev}{\mathrm{coev}^{\mathrm{L}}}
+\newcommand{\rev}{\mathrm{ev}^{\mathrm{R}}}
+\newcommand{\rcoev}{\mathrm{coev}^{\mathrm{R}}}
+\newcommand{\rdual}[1]{\prescript{*}{}{#1}}
+\newcommand{\lqTr}{\mathrm{Tr}^{\mathrm{L}}}
+\newcommand{\rqTr}{\mathrm{Tr}^{\mathrm{R}}}
+
+\newcommand{\deloop}[1]{\bm{\mathrm{B}} #1}
+
+\DeclareMathOperator{\Bimod}{Bimod}
