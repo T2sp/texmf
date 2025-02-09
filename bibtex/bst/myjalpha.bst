@@ -1185,7 +1185,7 @@ FUNCTION {format.eprint}
   { output.bibitem
     format.authors output
     title howpublished new.block.checkb
-    format.title emphasize "title" output.check
+    format.btitle emphasize "title" output.check
     % format.title output
     howpublished new.block.checka
     howpublished output
