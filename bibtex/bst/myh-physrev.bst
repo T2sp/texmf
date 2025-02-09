@@ -70,7 +70,9 @@ if$
 }
 FUNCTION {output.bibitem}
 { newline$
-"\bibitem{" write$
+"\bibitem[" write$
+  label write$
+  "]{" write$
 cite$ write$
 "}" write$
 newline$
@@ -918,8 +920,12 @@ MACRO {pp} {"Plasma Phys."}
 MACRO {physrep} {"Phys. Rep."}
 MACRO {physrev} {"Phys. Rev."}
 MACRO {pr} {"Phys. Rev."}
+MACRO {pra} {"Phys. Rev.~A"}
 MACRO {prb} {"Phys. Rev.~B"}
+MACRO {prc} {"Phys. Rev.~C"}
 MACRO {prd} {"Phys. Rev.~D"}
+MACRO {pre} {"Phys. Rev.~E"}
+MACRO {prx} {"Phys. Rev.~X"}
 MACRO {prl} {"Phys. Rev. Lett."}
 MACRO {procroysoc} {"Proc. Roy. Soc"}
 MACRO {ps} {"Physica Scripta"}
@@ -935,6 +941,31 @@ MACRO {zpc} {"Z. Phys.~C"}
 READ
 STRINGS { longest.label }
 INTEGERS { number.label longest.label.width }
+
+FUNCTION {calc.label}
+{ type$ "book" =
+  type$ "inbook" =
+  or
+    'author.editor.key.label
+    { type$ "proceedings" =
+        'editor.key.organization.label
+        { type$ "manual" =
+            'author.key.organization.label
+            'author.key.label
+          if$
+        }
+      if$
+    }
+  if$
+  duplicate$
+  year field.or.null purify$ #-1 #2 substring$
+  *
+  'label :=
+  year field.or.null purify$ #-1 #4 substring$
+  *
+  sortify 'sort.label :=
+}
+
 FUNCTION {initialize.longest.label}
 { "" 'longest.label :=
 #1 'number.label :=
