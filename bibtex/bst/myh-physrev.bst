@@ -1,29 +1,30 @@
 ENTRY
-{ address
-eprint
-author
-booktitle
-chapter
-collaboration
-edition
-editor
-howpublished
-institution
-journal
-key
-month
-note
-number
-organization
-pages
-publisher
-school
-series
-title
-type
-volume
-year
-url
+{   
+    address
+    eprint
+    author
+    booktitle
+    chapter
+    collaboration
+    edition
+    editor
+    howpublished
+    institution
+    journal
+    key
+    month
+    note
+    number
+    organization
+    pages
+    publisher
+    school
+    series
+    title
+    type
+    volume
+    year
+    url
 }
 {}
 { label }
