@@ -1362,6 +1362,7 @@ FUNCTION {format.eprint}
   MACRO {prd} {"Phys. Rev.~D"}
   MACRO {pre} {"Phys. Rev.~E"}
   MACRO {prx} {"Phys. Rev.~X"}
+  MACRO {prr} {"Phys. Rev.~Research"}
   MACRO {prl} {"Phys. Rev. Lett."}
   MACRO {procroysoc} {"Proc. Roy. Soc"}
   MACRO {ps} {"Physica Scripta"}

@@ -9,84 +9,96 @@
 % }
 % must be included in the preamble
 
+% \newcommand{\LEV}[2]{
+%     % ノード b の座標を取得
+%     \path (#1); \pgfgetlastxy{\bx}{\by};
+
+%     % ノード c の座標を取得
+%     \path (#2); \pgfgetlastxy{\cx}{\cy};
+
+%     % b と c の座標差 (pt) を計算
+%     \pgfmathsetmacro{\dx}{\cx-\bx}
+%     \pgfmathsetmacro{\dy}{\cy-\by}
+
+%     \pgfmathsetmacro{\ax}{\bx + 0.5*(\dx) - sqrt(3)/2 * \dy}
+%     \pgfmathsetmacro{\ay}{\by + 0.5*(\dy) + sqrt(3)/2 * \dx}
+
+%     \node[] (refpt1) at (\bx, \ay pt) {};
+%     \node[] (refpt2) at (\cx, \ay pt) {};
+
+%     \draw[->-=0.25,->-=0.75] (#2) .. controls (refpt2) and (refpt1) .. (#1);
+% }
+
+% \newcommand{\REV}[2]{
+%     % ノード b の座標を取得
+%     \path (#1); \pgfgetlastxy{\bx}{\by};
+
+%     % ノード c の座標を取得
+%     \path (#2); \pgfgetlastxy{\cx}{\cy};
+
+%     % b と c の座標差 (pt) を計算
+%     \pgfmathsetmacro{\dx}{\cx-\bx}
+%     \pgfmathsetmacro{\dy}{\cy-\by}
+
+%     \pgfmathsetmacro{\ax}{\bx + 0.5*(\dx) - sqrt(3)/2 * \dy}
+%     \pgfmathsetmacro{\ay}{\by + 0.5*(\dy) + sqrt(3)/2 * \dx}
+
+%     \node[] (refpt1) at (\bx, \ay pt) {};
+%     \node[] (refpt2) at (\cx, \ay pt) {};
+
+%     \draw[->-=0.25,->-=0.75] (#1) .. controls (refpt1) and (refpt2) .. (#2);
+% }
+
+% \newcommand{\LCOEV}[2]{
+%     % ノード b の座標を取得
+%     \path (#1); \pgfgetlastxy{\bx}{\by};
+
+%     % ノード c の座標を取得
+%     \path (#2); \pgfgetlastxy{\cx}{\cy};
+
+%     % b と c の座標差 (pt) を計算
+%     \pgfmathsetmacro{\dx}{\cx-\bx}
+%     \pgfmathsetmacro{\dy}{\cy-\by}
+
+%     \pgfmathsetmacro{\ax}{\bx + 0.5*(\dx) + sqrt(3)/2 * \dy}
+%     \pgfmathsetmacro{\ay}{\by + 0.5*(\dy) - sqrt(3)/2 * \dx}
+
+%     \node[] (refpt1) at (\bx, \ay pt) {};
+%     \node[] (refpt2) at (\cx, \ay pt) {};
+
+%     \draw[->-=0.25,->-=0.75] (#2) .. controls (refpt2) and (refpt1) .. (#1);
+% }
+
+% \newcommand{\RCOEV}[2]{
+%     % ノード b の座標を取得
+%     \path (#1); \pgfgetlastxy{\bx}{\by};
+
+%     % ノード c の座標を取得
+%     \path (#2); \pgfgetlastxy{\cx}{\cy};
+
+%     % b と c の座標差 (pt) を計算
+%     \pgfmathsetmacro{\dx}{\cx-\bx}
+%     \pgfmathsetmacro{\dy}{\cy-\by}
+
+%     \pgfmathsetmacro{\ax}{\bx + 0.5*(\dx) + sqrt(3)/2 * \dy}
+%     \pgfmathsetmacro{\ay}{\by + 0.5*(\dy) - sqrt(3)/2 * \dx}
+
+%     \node[] (refpt1) at (\bx, \ay pt) {};
+%     \node[] (refpt2) at (\cx, \ay pt) {};
+
+%     \draw[->-=0.25,->-=0.75] (#1) .. controls (refpt1) and (refpt2) .. (#2);
+% }
 \newcommand{\LEV}[2]{
-    % ノード b の座標を取得
-    \path (#1); \pgfgetlastxy{\bx}{\by};
-
-    % ノード c の座標を取得
-    \path (#2); \pgfgetlastxy{\cx}{\cy};
-
-    % b と c の座標差 (pt) を計算
-    \pgfmathsetmacro{\dx}{\cx-\bx}
-    \pgfmathsetmacro{\dy}{\cy-\by}
-
-    \pgfmathsetmacro{\ax}{\bx + 0.5*(\dx) - sqrt(3)/2 * \dy}
-    \pgfmathsetmacro{\ay}{\by + 0.5*(\dy) + sqrt(3)/2 * \dx}
-
-    \node[] (refpt1) at (\bx, \ay pt) {};
-    \node[] (refpt2) at (\cx, \ay pt) {};
-
-    \draw[->-=0.25,->-=0.75] (#2) .. controls (refpt2) and (refpt1) .. (#1);
+    \draw[-<-=.2,-<-=.8] (#1) to[out=90,in=90,looseness=2] (#2);
 }
-
-\newcommand{\REV}[2]{
-    % ノード b の座標を取得
-    \path (#1); \pgfgetlastxy{\bx}{\by};
-
-    % ノード c の座標を取得
-    \path (#2); \pgfgetlastxy{\cx}{\cy};
-
-    % b と c の座標差 (pt) を計算
-    \pgfmathsetmacro{\dx}{\cx-\bx}
-    \pgfmathsetmacro{\dy}{\cy-\by}
-
-    \pgfmathsetmacro{\ax}{\bx + 0.5*(\dx) - sqrt(3)/2 * \dy}
-    \pgfmathsetmacro{\ay}{\by + 0.5*(\dy) + sqrt(3)/2 * \dx}
-
-    \node[] (refpt1) at (\bx, \ay pt) {};
-    \node[] (refpt2) at (\cx, \ay pt) {};
-
-    \draw[->-=0.25,->-=0.75] (#1) .. controls (refpt1) and (refpt2) .. (#2);
-}
-
 \newcommand{\LCOEV}[2]{
-    % ノード b の座標を取得
-    \path (#1); \pgfgetlastxy{\bx}{\by};
-
-    % ノード c の座標を取得
-    \path (#2); \pgfgetlastxy{\cx}{\cy};
-
-    % b と c の座標差 (pt) を計算
-    \pgfmathsetmacro{\dx}{\cx-\bx}
-    \pgfmathsetmacro{\dy}{\cy-\by}
-
-    \pgfmathsetmacro{\ax}{\bx + 0.5*(\dx) + sqrt(3)/2 * \dy}
-    \pgfmathsetmacro{\ay}{\by + 0.5*(\dy) - sqrt(3)/2 * \dx}
-
-    \node[] (refpt1) at (\bx, \ay pt) {};
-    \node[] (refpt2) at (\cx, \ay pt) {};
-
-    \draw[->-=0.25,->-=0.75] (#2) .. controls (refpt2) and (refpt1) .. (#1);
+    \draw[-<-=.2,-<-=.8] (#1) to[out=-90,in=-90,looseness=2] (#2);
 }
-
+\newcommand{\REV}[2]{
+    \draw[->-=.2,->-=.8] (#1) to[out=90,in=90,looseness=2] (#2);
+}
 \newcommand{\RCOEV}[2]{
-    % ノード b の座標を取得
-    \path (#1); \pgfgetlastxy{\bx}{\by};
-
-    % ノード c の座標を取得
-    \path (#2); \pgfgetlastxy{\cx}{\cy};
-
-    % b と c の座標差 (pt) を計算
-    \pgfmathsetmacro{\dx}{\cx-\bx}
-    \pgfmathsetmacro{\dy}{\cy-\by}
-
-    \pgfmathsetmacro{\ax}{\bx + 0.5*(\dx) + sqrt(3)/2 * \dy}
-    \pgfmathsetmacro{\ay}{\by + 0.5*(\dy) - sqrt(3)/2 * \dx}
-
-    \node[] (refpt1) at (\bx, \ay pt) {};
-    \node[] (refpt2) at (\cx, \ay pt) {};
-
-    \draw[->-=0.25,->-=0.75] (#1) .. controls (refpt1) and (refpt2) .. (#2);
+    \draw[->-=.2,->-=.8] (#1) to[out=-90,in=-90,looseness=2] (#2);
 }
 
 \newcommand{\TJ}[3]{
