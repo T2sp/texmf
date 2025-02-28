@@ -251,6 +251,35 @@
     \end{scope}
 }
 
+\newcommand{\TUBE}[6]{    
+    \pgfmathsetmacro{\height}{#3}
+    \coordinate (tx_1) at (#1);
+    \coordinate (tx_2) at ($(#1)+(0,\height)$);
+    \coordinate (tx_3) at ($(#1)+(0,2*\height)$);
+    \coordinate (ty_1) at (#2);
+    \coordinate (ty_2) at ($(#2)+(0,\height)$);
+    \coordinate (ty_3) at ($(#2)+(0,2*\height)$);
+    \draw[gray,thin] (tx_1) to[out=-90,in=-90,looseness=0.6] (ty_1);
+    \draw[gray,thin,dashed] (tx_1) to[out=90,in=90,looseness=0.6] (ty_1);
+    \draw[white,thin,name path=horizontal] (tx_2) to[out=-90,in=-90,looseness=0.6] (ty_2);
+    % \draw[gray,thin,dashed] (tx_2) to[out=90,in=90,looseness=0.6] (ty_2);
+    \draw[gray,thin] (tx_3) to[out=-90,in=-90,looseness=0.6] (ty_3);
+    \draw[gray,thin] (tx_3) to[out=90,in=90,looseness=0.6] (ty_3);
+    \draw[gray,thin] (tx_1) -- (tx_3);
+    \draw[gray,thin] (ty_1) -- (ty_3);
+    \begin{scope}
+        \clip (tx_1) to[out=-90,in=-90,looseness=0.6] (ty_1) -- (ty_3) to[out=-90,in=-90,looseness=0.6] (tx_3) -- cycle;
+        \draw[name path=vertical] ($0.5*(tx_1) + 0.5*(ty_1)$) -- ($0.5*(tx_3) + 0.5*(ty_3)$);
+        \path[name intersections = {of = horizontal and vertical, by=f}];
+        \draw[->-=.5] (f) -- node[midway,right] {$ #5$} +(0,\height);
+        \draw[-<-=.5] (f) -- node[midway,right] {$ #4$} +(0,-\height);
+        \draw[-<-=.5,red] (f) to[out=180,in=-90,looseness=0.6] node[midway,below] {$ #6$} (tx_2);
+        \draw[->-=.5,red] (f) to[out=0,in=-90,looseness=0.6] node[midway,below] {$ #6$} (ty_2);
+        \draw[red,dashed] (tx_2) to[out=90,in=90,looseness=0.6] (ty_2);
+        \node[bullet] at (f) {};
+    % \node[above left] at (f) {$\varphi$};
+    \end{scope}}
+
 \newcommand{\lev}{\mathrm{ev}^{\mathrm{L}}}
 \newcommand{\lcoev}{\mathrm{coev}^{\mathrm{L}}}
 \newcommand{\rev}{\mathrm{ev}^{\mathrm{R}}}

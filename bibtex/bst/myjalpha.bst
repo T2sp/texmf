@@ -405,7 +405,7 @@ FUNCTION {init.state.consts}
   FUNCTION {format.title}
   { title empty$
       { "" }
-      { "\emph{" title "t" change.case$ * "}" * }
+      { "\textit{" title "t" change.case$ * "}" * }
     if$
   }
 
