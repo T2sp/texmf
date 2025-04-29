@@ -251,6 +251,42 @@
     \end{scope}
 }
 
+\newcommand{\ldABRAID}[4]{
+    \begin{scope}
+        \coordinate (CENTER_1) at ($0.5*(#1) + 0.5*(#4)$);
+        \coordinate (CENTER_2) at ($0.5*(#2) + 0.5*(#3)$);
+        
+        \draw[-<-=.75,name path=BRAID_1] (#1) .. controls (#1 |- CENTER_1) and (#4 |- CENTER_1) .. (#4);
+        \draw[->-=.75,name path=BRAID_2,spath/save=BRAID_2] (#2) .. controls (#2 |- CENTER_2) and (#3 |- CENTER_2) .. (#3);
+        \clip[name intersections={of=BRAID_1 and BRAID_2}] (intersection-1) circle (5pt);
+        \draw[spath/use=BRAID_2,white,ultra thick,double=black,double distance=0.4pt];
+    \end{scope}
+}
+
+\newcommand{\rdABRAID}[4]{
+    \begin{scope}
+        \coordinate (CENTER_1) at ($0.5*(#1) + 0.5*(#4)$);
+        \coordinate (CENTER_2) at ($0.5*(#2) + 0.5*(#3)$);
+        
+        \draw[->-=.75,name path=BRAID_1] (#1) .. controls (#1 |- CENTER_1) and (#4 |- CENTER_1) .. (#4);
+        \draw[-<-=.75,name path=BRAID_2,spath/save=BRAID_2] (#2) .. controls (#2 |- CENTER_2) and (#3 |- CENTER_2) .. (#3);
+        \clip[name intersections={of=BRAID_1 and BRAID_2}] (intersection-1) circle (5pt);
+        \draw[spath/use=BRAID_2,white,ultra thick,double=black,double distance=0.4pt];
+    \end{scope}
+}
+
+\newcommand{\lrdABRAID}[4]{
+    \begin{scope}
+        \coordinate (CENTER_1) at ($0.5*(#1) + 0.5*(#4)$);
+        \coordinate (CENTER_2) at ($0.5*(#2) + 0.5*(#3)$);
+        
+        \draw[-<-=.75,name path=BRAID_1] (#1) .. controls (#1 |- CENTER_1) and (#4 |- CENTER_1) .. (#4);
+        \draw[-<-=.75,name path=BRAID_2,spath/save=BRAID_2] (#2) .. controls (#2 |- CENTER_2) and (#3 |- CENTER_2) .. (#3);
+        \clip[name intersections={of=BRAID_1 and BRAID_2}] (intersection-1) circle (5pt);
+        \draw[spath/use=BRAID_2,white,ultra thick,double=black,double distance=0.4pt];
+    \end{scope}
+}
+
 \newcommand{\TUBE}[6]{    
     \pgfmathsetmacro{\height}{#3}
     \coordinate (tx_1) at (#1);
@@ -288,6 +324,7 @@
 \newcommand{\rddual}[1]{\prescript{**}{}{#1}}
 \newcommand{\lqTr}{\mathrm{Tr}^{\mathrm{L}}}
 \newcommand{\rqTr}{\mathrm{Tr}^{\mathrm{R}}}
+\newcommand{\RIB}[1]{\bm{\mathrm{Rib}}_{#1}}
 
 \newcommand{\deloop}[1]{\bm{\mathrm{B}} #1}
 \newcommand{\VecG}[1]{\bm{\mathrm{Vec}}_{#1}}
