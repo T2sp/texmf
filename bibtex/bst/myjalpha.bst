@@ -924,7 +924,8 @@ FUNCTION {format.eprint}
 
 
   FUNCTION {article}
-  { output.bibitem
+  { 
+    output.bibitem
     format.authors "author" output.check
     new.block
     format.title "title" output.check

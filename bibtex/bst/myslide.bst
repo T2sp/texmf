@@ -67,6 +67,7 @@ ENTRY
     pages
     publisher
     school
+    eprint
     series
     title
     type
@@ -208,7 +209,7 @@ FUNCTION {field.or.null}
 FUNCTION {emphasize}
 { duplicate$ empty$
     { pop$ "" }
-    { "\emph{" swap$ * "}" * }
+    { "\textbf{" swap$ * "}" * }
   if$
 }
 
@@ -705,30 +706,32 @@ FUNCTION {format.eprint}
     if$
 }
 
+% ===========================
 
 FUNCTION {article}
-{ output.bibitem
+{ 
+  output.bibitem
   format.authors "author" output.check
   author format.key output
   new.block
 %   format.title "title" output.check
   new.block
-  crossref missing$
-    { 
-    %   journal emphasize "journal" output.check
-      eid empty$
-        { format.vol.num.pages output }
-        { format.vol.num.eid output }
-      if$
-      format.date "year" output.check
-    }
-    { format.article.crossref output.nonnull
-      eid empty$
-        { format.pages output }
-        { format.eid output }
-      if$
-    }
-  if$
+  % crossref missing$
+  %   { 
+  %   %   journal emphasize "journal" output.check
+  %     eid empty$
+  %       { format.vol.num.pages output }
+  %       { format.vol.num.eid output }
+  %     if$
+  format.date "year" output.check
+  %   }
+  %   { format.article.crossref output.nonnull
+  %     eid empty$
+  %       { format.pages output }
+  %       { format.eid output }
+  %     if$
+  %   }
+  % if$
 %   format.issn output
 %   format.doi output
 %   format.url output
@@ -755,23 +758,23 @@ FUNCTION {book}
   if$
   new.block
   format.btitle "title" output.check
-  crossref missing$
-    { format.bvolume output
-      new.block
-      format.number.series output
-      new.sentence
-      publisher "publisher" output.check
-      address output
-    }
-    { new.block
-      format.book.crossref output.nonnull
-    }
-  if$
+  % crossref missing$
+  %   { format.bvolume output
+  %     new.block
+  %     format.number.series output
+  %     new.sentence
+  %     publisher "publisher" output.check
+  %     address output
+  %   }
+  %   { new.block
+  %     format.book.crossref output.nonnull
+  %   }
+  % if$
   format.edition output
   format.date "year" output.check
-  format.isbn output
-  format.doi output
-  format.url output
+  % format.isbn output
+  % format.doi output
+  % format.url output
   new.block
   note output
   fin.entry
