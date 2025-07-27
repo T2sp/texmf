@@ -732,9 +732,10 @@ FUNCTION {article}
 %   format.issn output
 %   format.doi output
 %   format.url output
-  new.block
-
+  % new.block
   format.eprint output
+  
+  new.block
   note output
   fin.entry
 }
