@@ -7,6 +7,7 @@
 \newcommand{\dualip}[2]{\langle #1 ,\, #2 \rangle}
 \newcommand{\ipdual}[2]{\left( #1 ,\, #2 \right)}
 
+% Lie group, Lie algebra
 \newcommand{\Mat}[2]{\mathrm{M}(#1,\, #2)}
 \DeclareMathOperator{\M}{M}
 
@@ -45,34 +46,57 @@
 \newcommand{\PGL}{\mathrm{PGL}}
 \newcommand{\PU}{\mathrm{PU}}
 
+% algebra
 \newcommand{\LC}[3]{#1_1 #2_1 + \cdots + #1_{#3} #2_{#3}}
 \newcommand{\gWord}[2]{#1_1^{\pm 1} \cdots #1_{#2}^{\pm 1}}
 \newcommand{\Freemod}[2]{#1^{\oplus #2}}
-\newcommand{\Obj}[1]{\mathrm{Ob}(#1)}
+
+\newcommand{\ZC}[2]{Z_{#1}(#2_\bullet)}
+\newcommand{\BC}[2]{B_{#1}(#2_\bullet)}
+\newcommand{\HC}[2]{H_{#1}(#2_\bullet)}
+\newcommand{\DoubleComplex}[3]{\bigl(#1^{\bullet,\, *},\, #2^{\bullet,\, *},\, #3^{\bullet,\, *} \bigr)}
+
+\newcommand{\Grp}[2]{H_{\mathrm{Grp}}{}_{#1}\left(#2\right)}
+\newcommand{\coGrp}[2]{H_{\mathrm{Grp}}^{#1}\left(#2\right)}
+\newcommand{\coExtGrp}[2]{H_{\mathrm{ExtGrp}}^{#1}\left(#2\right)}
+\newcommand{\coLie}[2]{H_{\mathrm{Lie}}^{#1}\left(#2\right)}
+\newcommand{\Bim}[3]{{}_{#1}#2{}_{#3}}
+
+% 1-category theory
 \newcommand{\Cat}[1]{\mathcal{#1}}
 \newcommand{\OP}[1]{#1^{\mathrm{op}}}
+\newcommand{\Obj}[1]{\mathrm{Ob}(#1)}
+\newcommand{\Id}{\mathrm{Id}}
+
 \newcommand{\SETS}{\bm{\mathrm{Sets}}}
 \newcommand{\CAT}{\bm{\mathrm{Cat}}}
+\newcommand{\NAT}{\bm{\mathrm{Nat}}}
+\newcommand{\FREE}{\bm{\mathrm{Free}}}
+\newcommand{\CONE}[1]{\bm{\mathrm{Cone}}(#1)}
+\newcommand{\coCONE}[1]{\bm{\mathrm{coCone}}(#1)}
+\newcommand{\Psh}[2]{[#1^{\mathrm{op}},\, #2]}
+\newcommand{\PshSETS}[1]{\mathrm{PSh}\left(#1,\, \bm{\mathrm{Sets}}\right)}
+
 \newcommand{\TOP}{\bm{\mathrm{Top}}}
 \newcommand{\PAIR}{\bm{\mathrm{Pair}}}
 \newcommand{\TRI}{\bm{\mathrm{Tri}}}
 \newcommand{\hTOP}{\bm{\mathrm{hTOP}}}
-\newcommand{\CHAIN}{\bm{\mathrm{Chain}}}
-\newcommand{\COCHAIN}{\bm{\mathrm{coChain}}}
-\newcommand{\Chain}[1]{\bm{\mathrm{Ch}}(#1)}
-\newcommand{\dChain}[1]{\bm{\mathrm{C}_2}(#1)}
+
 \newcommand{\GRP}{\bm{\mathrm{Grp}}}
-\newcommand{\KAN}{\mathcal{K}\bm{\mathrm{an}}}
-\newcommand{\Kan}{\bm{\mathrm{Kan}}}
-\newcommand{\CATinfty}{\bm{\mathrm{Cat}}_{\bm{(\infty,\, 1)}}}
-\newcommand{\QCAT}{\mathcal{Q}\bm{\mathrm{Cat}}}
-\newcommand{\qCat}{\bm{\mathrm{qCat}}}
-\newcommand{\inftyGrpd}{\bm{\infty\mathrm{Grpd}}}
-\newcommand{\OPinfty}{\bm{\mathrm{Op}}_{\bm{(\infty,\, 1)}}}
-\newcommand{\Opinfty}{\bm{\mathrm{Op}}_{\bm{(\infty,\, 1)}}^\Delta}
 \newcommand{\Ab}{\bm{\mathrm{Ab}}}
 \newcommand{\VEC}[1]{\bm{\mathrm{Vec}_{#1}}}
 \newcommand{\HILB}{\bm{\mathrm{Hilb}}}
+
+\newcommand{\CHAIN}{\bm{\mathrm{Chain}}}
+\newcommand{\COCHAIN}{\bm{\mathrm{coChain}}}
+\newcommand{\SES}[1]{\bm{\mathrm{SES}}(#1)}
+\newcommand{\CSES}{\bm{\mathrm{SES}}(\bm{\mathrm{Chain}})}
+\newcommand{\ES}[1]{\bm{\mathrm{ES}}(#1)}
+\newcommand{\CES}{\bm{\mathrm{ES}}(\bm{\mathrm{Chain}})}
+\newcommand{\Chain}[1]{\bm{\mathrm{Ch}}(#1)}
+\newcommand{\dChain}[1]{\bm{\mathrm{C}_2}(#1)}
+
+\newcommand{\unity}{\mathds{1}}
 \newcommand{\MOD}[1]{#1\mathchar`-\bm{\mathrm{Mod}}}
 \newcommand{\ALG}[1]{#1\mathchar`-\bm{\mathrm{Alg}}}
 \newcommand{\REP}[1]{\bm{\mathrm{Rep}}\left(#1\right)}
@@ -81,30 +105,21 @@
 \newcommand{\MODC}[2]{#2\mathchar`-\bm{\mathrm{Mod}}_{#1}}
 \newcommand{\MODCR}[2]{\bm{\mathrm{Mod}}_{#1}\mathchar`- #2}
 \newcommand{\BIMODC}[3]{\bm{\mathrm{Bimod}}_{#1}\left(#2,\, #3\right)}
-\newcommand{\NAT}{\bm{\mathrm{Nat}}}
-\newcommand{\SES}[1]{\bm{\mathrm{SES}}(#1)}
-\newcommand{\CSES}{\bm{\mathrm{SES}}(\bm{\mathrm{Chain}})}
-\newcommand{\ES}[1]{\bm{\mathrm{ES}}(#1)}
-\newcommand{\CES}{\bm{\mathrm{ES}}(\bm{\mathrm{Chain}})}
-\newcommand{\FREE}{\bm{\mathrm{Free}}}
-\newcommand{\CONE}[1]{\bm{\mathrm{Cone}}(#1)}
-\newcommand{\coCONE}[1]{\bm{\mathrm{coCone}}(#1)}
-\newcommand{\Psh}[2]{[#1^{\mathrm{op}},\, #2]}
-\newcommand{\PshSETS}[1]{\mathrm{PSh}\left(#1,\, \bm{\mathrm{Sets}}\right)}
+
+% infinity category theory
 \newcommand{\inftyPsh}[1]{\bm{\mathrm{PSh}}_{\bm{(\infty,\, 1)}}\left(#1\right)}
-\newcommand{\ZC}[2]{Z_{#1}(#2_\bullet)}
-\newcommand{\BC}[2]{B_{#1}(#2_\bullet)}
-\newcommand{\HC}[2]{H_{#1}(#2_\bullet)}
-\newcommand{\DoubleComplex}[3]{\bigl(#1^{\bullet,\, *},\, #2^{\bullet,\, *},\, #3^{\bullet,\, *} \bigr)}
+\newcommand{\KAN}{\mathcal{K}\bm{\mathrm{an}}}
+\newcommand{\Kan}{\bm{\mathrm{Kan}}}
+\newcommand{\CATinfty}{\bm{\mathrm{Cat}}_{\bm{(\infty,\, 1)}}}
+\newcommand{\QCAT}{\mathcal{Q}\bm{\mathrm{Cat}}}
+\newcommand{\qCat}{\bm{\mathrm{qCat}}}
+\newcommand{\inftyGrpd}{\bm{\infty\mathrm{Grpd}}}
+\DeclareMathOperator{\FUN}{\mathcal{F}\bm{\mathrm{un}}}
 
-\newcommand{\Id}{\mathrm{Id}}
-\newcommand{\unity}{\mathds{1}}
-
-\newcommand{\Grp}[2]{H_{\mathrm{Grp}}{}_{#1}\left(#2\right)}
-\newcommand{\coGrp}[2]{H_{\mathrm{Grp}}^{#1}\left(#2\right)}
-\newcommand{\coExtGrp}[2]{H_{\mathrm{ExtGrp}}^{#1}\left(#2\right)}
-\newcommand{\coLie}[2]{H_{\mathrm{Lie}}^{#1}\left(#2\right)}
-\newcommand{\Bim}[3]{{}_{#1}#2{}_{#3}}
+% infinity operad
+\newcommand{\OPinfty}{\bm{\mathrm{Op}}_{\bm{(\infty,\, 1)}}}
+\newcommand{\Opinfty}{\bm{\mathrm{Op}}_{\bm{(\infty,\, 1)}}^\Delta}
+\newcommand{\Ope}[1]{#1^\otimes}
 
 % \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\codim}{codim}
@@ -143,7 +158,6 @@
 \DeclareMathOperator{\FPdim}{FPdim}
 \DeclareMathOperator{\Tube}{Tube}
 \DeclareMathOperator{\Fun}{Fun}
-\DeclareMathOperator{\FUN}{\mathcal{F}\bm{\mathrm{un}}}
 \DeclareMathOperator{\Un}{Un}
 \DeclareMathOperator{\St}{St}
 \DeclareMathOperator{\Tw}{Tw}
