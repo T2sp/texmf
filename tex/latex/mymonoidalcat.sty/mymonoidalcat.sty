@@ -287,6 +287,18 @@
     \end{scope}
 }
 
+\newcommand{\DRI}[4]{
+    \begin{scope}
+        \coordinate (CENTER_1) at ($0.5*(a) + 0.5*(d)$);
+        \coordinate (CENTER_2) at ($0.5*(b) + 0.5*(c)$);
+
+        \draw[->-=.75,name path=BRAID_1,spath/save=BRAID_1] (a) .. controls (a |- CENTER_1) and (d |- CENTER_1) .. (d);
+        \draw[->-=.75,name path=BRAID_2,double] (b) .. controls (b |- CENTER_2) and (c |- CENTER_2) .. (c);
+        \clip[name intersections={of=BRAID_1 and BRAID_2}] (intersection-1) circle (5pt);
+        \draw[spath/use=BRAID_1,white,ultra thick,double=black,double distance=0.4pt];
+    \end{scope}
+}
+
 \newcommand{\TUBE}[6]{    
     \pgfmathsetmacro{\height}{#3}
     \coordinate (tx_1) at (#1);
