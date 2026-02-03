@@ -102,6 +102,50 @@
     \draw[#6,very thick,double={#4},double distance={#5},spath/use=SUBCURVE];
 }
 
+\newcommand{\DArr}[1]{
+    %%%%% black double arrow
+    % #1: spath name
+    \draw[->,spath/use=#1];
+    \draw[white,spath/use=#1,shorten >= 1pt];
+    \draw[double, double distance=1.4pt,shorten >= 1.7pt,spath/use=#1];
+}
+
+\newcommand{\TLine}[1]{
+    %%%%% black triple line
+    % #1: spath name
+    \draw[line width=2.2pt, black,spath/use=#1];
+    \draw[line width=1.4pt, white,spath/use=#1];
+    \draw[line width=0.4pt, black,spath/use=#1];
+}
+
+\newcommand{\TArr}[1]{
+    %%%%% black triple arrow
+    % #1: spath name
+    \draw[line width=2.2pt, black,spath/use=#1,shorten >= 1.7pt];
+    \draw[line width=1.4pt, white,spath/use=#1,shorten >= 1.7pt];
+    \draw[line width=0.4pt, black,spath/use=#1,shorten >= 1.7pt];
+    \draw[->,spath/use=#1];
+}
+
+\newcommand{\DoubleArrow}[2]{
+    %%%%% optional double arrow
+    % #1: spath name
+    % #2: option
+    \draw[->,#2,spath/use=#1];
+    \draw[white,spath/use=#1,shorten >= 1pt];
+    \draw[double, double distance=1.4pt,#2,shorten >= 1.7pt,spath/use=#1];
+}
+
+\newcommand{\TriArrow}[2]{
+    %%%%% optional triple arrow
+    % #1: spath name
+    % #2: option
+    \draw[line width=2.2pt, #2,spath/use=#1,shorten >= 1.7pt];
+    \draw[line width=1.4pt, white,spath/use=#1,shorten >= 1.7pt];
+    \draw[line width=0.4pt, #2,spath/use=#1,shorten >= 1.7pt];
+    \draw[->,#2,spath/use=#1];
+}
+
 %%% square
 
 \newcommand{\Rsquare}[3]{
