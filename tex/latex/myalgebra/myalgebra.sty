@@ -1,11 +1,47 @@
 \newcommand{\Ad}[1]{ \mathrm{Ad}_{#1} \mathop{}}
 \newcommand{\base}[1]{ \vb{e}_{#1} }
-\newcommand{\Hom}[1]{\mathrm{Hom}_{#1} \mathop{}}
-\newcommand{\inftyMap}[1]{\mathrm{Map}_{#1} \mathop{}}
 % \newcommand{\sgn}[1]{\mathop{\mathrm{sgn}} #1 \,}
 \newcommand{\cdim}{\mathrm{dim}_{\mathbb{C}} \mathop{}}
 \newcommand{\dualip}[2]{\langle #1 ,\, #2 \rangle}
 \newcommand{\ipdual}[2]{\left( #1 ,\, #2 \right)}
+
+% \DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Coim}{Coim}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Homo}{Hom}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tot}{Tot}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\cod}{cod}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Cliff}{Cliff}
+\DeclareMathOperator{\character}{char}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\rad}{rad}
+% \DeclareMathOperator{\GCD}{gcd}
+% \DeclareMathOperator{\LCM}{lcm}
+\DeclareMathOperator{\height}{ht}
+\DeclareMathOperator{\len}{len}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\Pf}{Pf}
+\DeclareMathOperator{\Hf}{Hf}
+\DeclareMathOperator{\FPdim}{FPdim}
+
+\DeclarePairedDelimiterXPP{\elem}[3]{}{\lbrack}{\rbrack}{^{#2}{}_{#3}}{\, #1 \,}
+\DeclarePairedDelimiterXPP{\uelem}[3]{}{\lbrack}{\rbrack}{_{#2}{}^{#3}}{\, #1 \,}
 
 % Lie group, Lie algebra
 \newcommand{\Mat}[2]{\mathrm{M}(#1,\, #2)}
@@ -66,6 +102,7 @@
 \newcommand{\OP}[1]{#1^{\mathrm{op}}}
 \newcommand{\Obj}[1]{\mathrm{Ob}(#1)}
 \newcommand{\Id}{\mathrm{Id}}
+\newcommand{\Hom}[1]{\mathrm{Hom}_{#1}}
 \DeclareMathOperator{\forget}{forget}
 
 \newcommand{\SETS}{\bm{\mathrm{Sets}}}
@@ -125,6 +162,7 @@
 \DeclareMathOperator{\Tube}{Tube}
 
 % infinity category
+\newcommand{\inftyMap}[1]{\mathrm{Map}_{#1}}
 \newcommand{\inftyPsh}[1]{\bm{\mathrm{PSh}}_{\bm{(\infty,\, 1)}}\left(#1\right)}
 \newcommand{\htimes}{\times^{\text{h}}}
 \newcommand{\ISOM}{\mathcal{I}\bm{\mathrm{som}}}
@@ -140,46 +178,10 @@
 \DeclareMathOperator{\Un}{Un}
 \DeclareMathOperator{\St}{St}
 \DeclareMathOperator{\Tw}{Tw}
+\DeclareMathOperator{\PrC}{\bm{\mathrm{Pr}}_{\mathbb{C}}}
+\DeclareMathOperator{\Pr}{\bm{\mathrm{Pr}}}
 
 % infinity operad
 \newcommand{\OPinfty}{\bm{\mathrm{Op}}_{\bm{(\infty,\, 1)}}}
 \newcommand{\Opinfty}{\bm{\mathrm{Op}}_{\bm{(\infty,\, 1)}}^\Delta}
 \newcommand{\Oper}[1]{#1^\otimes}
-
-% \DeclareMathOperator{\Tr}{Tr}
-\DeclareMathOperator{\codim}{codim}
-\DeclareMathOperator{\Span}{Span}
-\DeclareMathOperator{\Spec}{Spec}
-\DeclareMathOperator{\Ker}{Ker}
-\DeclareMathOperator{\Coker}{Coker}
-\DeclareMathOperator{\coker}{coker}
-\DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\Coim}{Coim}
-\DeclareMathOperator{\coim}{coim}
-\DeclareMathOperator{\ind}{ind}
-\DeclareMathOperator{\Aut}{Aut}
-\DeclareMathOperator{\End}{End}
-\DeclareMathOperator{\Homo}{Hom}
-\DeclareMathOperator{\Tor}{Tor}
-\DeclareMathOperator{\Ext}{Ext}
-\DeclareMathOperator{\Tot}{Tot}
-\DeclareMathOperator{\dom}{dom}
-\DeclareMathOperator{\cod}{cod}
-\DeclareMathOperator{\colim}{colim}
-\DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Cliff}{Cliff}
-\DeclareMathOperator{\character}{char}
-\DeclareMathOperator{\Der}{Der}
-\DeclareMathOperator{\ad}{ad}
-\DeclareMathOperator{\rad}{rad}
-% \DeclareMathOperator{\GCD}{gcd}
-% \DeclareMathOperator{\LCM}{lcm}
-\DeclareMathOperator{\height}{ht}
-\DeclareMathOperator{\len}{len}
-\DeclareMathOperator{\res}{res}
-\DeclareMathOperator{\Pf}{Pf}
-\DeclareMathOperator{\Hf}{Hf}
-\DeclareMathOperator{\FPdim}{FPdim}
-
-\DeclarePairedDelimiterXPP{\elem}[3]{}{\lbrack}{\rbrack}{^{#2}{}_{#3}}{\, #1 \,}
-\DeclarePairedDelimiterXPP{\uelem}[3]{}{\lbrack}{\rbrack}{_{#2}{}^{#3}}{\, #1 \,}
