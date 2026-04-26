@@ -105,3 +105,164 @@
 \makeatother
 
 \newcommand{\Bordismbdy}[2]{(#1) to[out=-90,in=-90,looseness=0.6] (#2) to[out=90,in=90,looseness=0.6] (#1)}
+
+%%%%%%%%%% tikz keys for graphical calculus %%%%%%%%%%
+\tikzset{
+% keys for 2-categorical graphical calculus
+    2cat/.cd,
+        %%% globular diagrams
+        %%%%% arrow shapes
+        glob/0cell/arrow/.style={
+            circle,fill,inner sep=1.5pt
+        },
+        glob/1cell/arrow/.style={
+            ->
+        },
+        glob/2cell/arrow/.style={ %%% double arrow
+            draw=black,
+            line width=.6pt,
+            double=white,
+            double distance=1.2pt,
+            -{Implies[length=7pt]}
+        }
+        %%%%% cell colors
+        glob/2cell/color/default/.style={
+            gray!60,opacity=.4
+        },
+        glob/2cell/color/x/.style={
+            red!40,opacity=.4
+        },
+        glob/2cell/color/y/.style={
+            blue!40,opacity=.4
+        },
+        glob/2cell/color/z/.style={
+            green!40,opacity=.4
+        }
+        %%% physical diagrams
+        %%%%% colors
+        phys/0strata/color/default/.style={ %%%%% codim=0
+            gray!40,opacity=.4
+        },
+        phys/1strata/color/default/.style={ %%%%% codim=1
+            gray!60,opacity=.4
+        },
+        phys/1strata/color/x/.style={ %%%%% codim=1
+            red!60,opacity=.4
+        },
+        phys/1strata/color/y/.style={ %%%%% codim=1
+            blue!60,opacity=.4
+        },
+        phys/1strata/color/z/.style={ %%%%% codim=1
+            green!60,opacity=.4
+        },
+        %%%%% shapes
+        phys/1strata/shape/default/.style={ %%%%% codim=2
+            thick
+        },
+        phys/2strata/shape/default/.style={ %%%%% codim=2
+            circle,
+            fill,
+            inner sep=1.5pt
+        },
+        phys/2strata/shape/L/.style={ %%%%% codim=2, left adjoint
+            circle,
+            draw=black,
+            thick,
+            fill=white,
+            inner sep=1.5pt
+        },
+        phys/2strata/shape/R/.style={ %%%%% codim=2, right adjoint
+            rectangle,
+            draw=black,
+            thick,
+            fill=white,
+            inner sep=1.5pt
+        }
+}
+
+\tikzset{
+% keys for 3-categorical graphical calculus
+    3cat/.cd,
+        %%% globular diagrams
+        %%%%% arrow shapes
+        glob/0cell/arrow/.style={
+            circle,fill,inner sep=1.5pt
+        },
+        glob/1cell/arrow/.style={
+            ->
+        },
+        glob/2cell/arrow/.style={ %%% double arrow
+            draw=black,
+            line width=.6pt,
+            double=white,
+            double distance=1.2pt,
+            -{Implies[length=7pt]}
+        },
+        glob/3cell/arrow/.style={
+            draw=black,
+            line width=.5pt,
+            double=white,
+            double distance=1.8pt,
+            postaction={
+                draw=black,
+                line width=.5pt
+            },
+            -{Implies[length=7pt]}
+        },
+        %%%%% cell colors
+        glob/2cell/color/default/.style={
+            gray!60,opacity=.4
+        },
+        glob/2cell/color/x/.style={
+            red!40,opacity=.4
+        },
+        glob/2cell/color/y/.style={
+            blue!40,opacity=.4
+        },
+        glob/2cell/color/z/.style={
+            green!40,opacity=.4
+        },
+        glob/3cell/color/default/.style={
+            gray!40,opacity=.4
+        },
+        %%% physical diagrams
+        %%%%% colors
+        phys/0strata/color/default/.style={ %%%%% codim=0
+            gray!40,opacity=.4
+        },
+        phys/1strata/color/default/.style={ %%%%% codim=1
+            gray!60,opacity=.4
+        },
+        phys/1strata/color/x/.style={ %%%%% codim=1
+            red!60,opacity=.4
+        },
+        phys/1strata/color/y/.style={ %%%%% codim=1
+            blue!60,opacity=.4
+        },
+        phys/1strata/color/z/.style={ %%%%% codim=1
+            green!60,opacity=.4
+        },
+        %%%%% shapes
+        phys/2strata/shape/default/.style={ %%%%% codim=2
+            thick
+        },
+        phys/3strata/shape/default/.style={ %%%%% codim=3
+            circle,
+            fill,
+            inner sep=1.5pt
+        },
+        phys/3strata/shape/L/.style={ %%%%% codim=3, left adjoint
+            circle,
+            draw=black,
+            thick,
+            fill=white,
+            inner sep=1.5pt
+        },
+        phys/3strata/shape/R/.style={ %%%%% codim=3, right adjoint
+            rectangle,
+            draw=black,
+            thick,
+            fill=white,
+            inner sep=1.5pt
+        }
+}
