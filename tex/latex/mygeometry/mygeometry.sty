@@ -108,6 +108,71 @@
 
 %%%%%%%%%% tikz keys for graphical calculus %%%%%%%%%%
 \tikzset{
+% keys for 1-categorical graphical calculus
+    1cat/.cd,
+        %%% globular diagrams
+        %%%%% arrow shapes
+        glob/0cell/arrow/.style={
+            circle,fill,inner sep=1.5pt
+        },
+        glob/1cell/arrow/.style={
+            ->
+        }
+        %%%%% cell colors
+        glob/1cell/color/default/.style={
+            black
+        },
+        glob/1cell/color/x/.style={
+            red
+        },
+        glob/1cell/color/y/.style={
+            blue
+        },
+        glob/1cell/color/z/.style={
+            DarkGreen
+        },
+        %%% physical diagrams
+        %%%%% colors
+        phys/0strata/color/default/.style={ %%%%% codim=1
+            gray!60,opacity=.4
+        },
+        phys/0strata/color/x/.style={ %%%%% codim=1
+            red!60,opacity=.4
+        },
+        phys/0strata/color/y/.style={ %%%%% codim=1
+            blue!60,opacity=.4
+        },
+        phys/0strata/color/z/.style={ %%%%% codim=1
+            green!60,opacity=.4
+        },
+        phys/1strata/color/default/.style={ %%%%% codim=0
+            black
+        }
+        %%%%% shapes
+        phys/0strata/shape/default/.style={ %%%%% codim=2
+            thick
+        },
+        phys/1strata/shape/default/.style={ %%%%% codim=2
+            circle,
+            fill,
+            inner sep=1.5pt
+        },
+        phys/1strata/shape/L/.style={ %%%%% codim=2, left adjoint
+            circle,
+            draw=black,
+            thick,
+            fill=white,
+            inner sep=1.5pt
+        },
+        phys/1strata/shape/R/.style={ %%%%% codim=2, right adjoint
+            rectangle,
+            draw=black,
+            thick,
+            fill=white,
+            inner sep=1.5pt
+        }
+}
+\tikzset{
 % keys for 2-categorical graphical calculus
     2cat/.cd,
         %%% globular diagrams
