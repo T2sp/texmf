@@ -212,5 +212,17 @@
 \newcommand{\lcond}{% longcondensation
     \mathrel{\,\hspace{2.15ex}\joinrel\rhook\joinrel\hspace{-2.15ex}\joinrel\longrightarrow}
 }
+\tikzset{%color
+    cond/.style={
+        ->,
+        postaction={decorate},
+        decoration={
+            markings,
+            mark=at position 1 with {
+                \draw[{Hooks[left]}-] (-.85ex,0) -- +(-.1,0);
+            }
+        }
+    }
+}
 \DeclareMathOperator{\MAT}{Mat}
 \DeclareMathOperator{\Kar}{Kar}
