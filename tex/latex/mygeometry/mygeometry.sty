@@ -87,7 +87,7 @@
 \newcommand{\DISKB}[1]{\mathcal{D}\mathrm{isk}\left(#1\right)}
 \newcommand{\DISK}{\mathcal{D}\mathrm{isk}}
 \newcommand{\DISKfr}{\mathcal{D}\mathrm{isk}^{\mathrm{fr}}}
-% \newcommand{\ALG}[2]{\mathrm{Alg}_{#1}\left(#2\right)}
+% \newcommand{\Alg}[2]{\mathrm{Alg}_{#1}\left(#2\right)}
 \newcommand{\FIN}{\bm{\mathrm{Fin}}}
 \newcommand{\sAb}{\bm{\mathrm{Ab}_{\Delta}}}
 \newcommand{\ner}[1]{\mathrm{N}\left(#1\right)}
@@ -172,6 +172,7 @@
             inner sep=1.5pt
         }
 }
+
 \tikzset{
 % keys for 2-categorical graphical calculus
     2cat/.cd,
@@ -208,17 +209,23 @@
         phys/0strata/color/default/.style={ %%%%% codim=0
             gray!40,opacity=.4
         },
+        phys/0strata/color/x/.style={ %%%%% codim=0
+            red!40,opacity=.4
+        },
+        phys/0strata/color/y/.style={ %%%%% codim=0
+            blue!40,opacity=.4
+        },
         phys/1strata/color/default/.style={ %%%%% codim=1
-            gray!60,opacity=.4
+            black
         },
         phys/1strata/color/x/.style={ %%%%% codim=1
-            red!60,opacity=.4
+            red
         },
         phys/1strata/color/y/.style={ %%%%% codim=1
-            blue!60,opacity=.4
+            blue
         },
         phys/1strata/color/z/.style={ %%%%% codim=1
-            green!60,opacity=.4
+            green
         },
         %%%%% shapes
         phys/1strata/shape/default/.style={ %%%%% codim=2
@@ -244,55 +251,65 @@
             inner sep=1.5pt
         }
 }
+
 \tikzset{
 % keys for 3-categorical graphical calculus
     3cat/.cd,
-        % %%% globular diagrams
-        % %%%%% arrow shapes
-        % glob/0cell/arrow/.style={
-        %     circle,fill,inner sep=1.5pt,outer sep=1pt
-        % },
-        % glob/1cell/arrow/.style={
-        %     ->
-        % },
-        % glob/2cell/arrow/.style={ %%% double arrow
-        %     draw=black,
-        %     line width=.6pt,
-        %     double=white,
-        %     double distance=1.2pt,
-        %     -{Implies[length=7pt]}
-        % },
-        % glob/3cell/arrow/.style={
-        %     draw=black,
-        %     line width=.5pt,
-        %     double=white,
-        %     double distance=1.8pt,
-        %     postaction={
-        %         draw=black,
-        %         line width=.5pt
-        %     },
-        %     -{Implies[length=7pt]}
-        % },
-        % %%%%% cell colors
-        % glob/2cell/color/default/.style={
-        %     gray!60,opacity=.4
-        % },
-        % glob/2cell/color/x/.style={
-        %     red!40,opacity=.4
-        % },
-        % glob/2cell/color/y/.style={
-        %     blue!40,opacity=.4
-        % },
-        % glob/2cell/color/z/.style={
-        %     green!40,opacity=.4
-        % },
-        % glob/3cell/color/default/.style={
-        %     gray!40,opacity=.4
-        % },
+        %%% globular diagrams
+        %%%%% arrow shapes
+        glob/0cell/arrow/.style={
+            circle,fill,inner sep=1.5pt,outer sep=1pt
+        },
+        glob/1cell/arrow/.style={
+            ->
+        },
+        glob/2cell/arrow/.style={ %%% double arrow
+            draw=black,
+            line width=.6pt,
+            double=white,
+            double distance=1.2pt,
+            -{Implies[length=7pt]}
+        },
+        glob/3cell/arrow/.style={
+            draw=black,
+            line width=.5pt,
+            double=white,
+            double distance=1.8pt,
+            postaction={
+                draw=black,
+                line width=.5pt
+            },
+            -{Implies[length=7pt]}
+        },
+        %%%%% cell colors
+        glob/2cell/color/default/.style={
+            gray!60,opacity=.4
+        },
+        glob/2cell/color/x/.style={
+            red!40,opacity=.4
+        },
+        glob/2cell/color/y/.style={
+            blue!40,opacity=.4
+        },
+        glob/2cell/color/z/.style={
+            green!40,opacity=.4
+        },
+        glob/3cell/color/default/.style={
+            gray!40,opacity=.4
+        },
         %%% physical diagrams
         %%%%% colors
         phys/0strata/color/default/.style={ %%%%% codim=0
             gray!40,opacity=.4
+        },
+        phys/0strata/color/x/.style={ %%%%% codim=0
+            red!30,opacity=.4
+        },
+        phys/0strata/color/y/.style={ %%%%% codim=0
+            blue!30,opacity=.4
+        },
+        phys/0strata/color/z/.style={ %%%%% codim=0
+            green!30,opacity=.4
         },
         phys/1strata/color/default/.style={ %%%%% codim=1
             gray!60,opacity=.4
