@@ -76,7 +76,7 @@
         series
         title
         type
-        % url
+        url
         volume
         year
         yomi
@@ -884,7 +884,9 @@ FUNCTION {init.state.consts}
 
   FUNCTION {format.date.paren.nomonth}
   { year empty$
-    { "there's no year in " cite$ * warning$ }
+    { "there's no year in " cite$ * warning$
+      ""
+    }
     {
         "(" year * ")" *
     }
@@ -909,6 +911,13 @@ FUNCTION {init.state.consts}
 	  { pages }
       if$
     }
+  if$
+}
+
+FUNCTION {format.url}
+{ url empty$
+    { "" }
+    { "\url{" url * "}" * }
   if$
 }
 
@@ -1207,6 +1216,8 @@ FUNCTION {format.eprint}
     school "school" output.check
     address output
     format.date "year" output.check
+    format.eprint output
+    format.url output
   
     new.block
     note output
@@ -1456,7 +1467,7 @@ FUNCTION {format.eprint}
       }
       { s #1 "{v{}}{l{}}" format.name$
         duplicate$ text.length$ #2 <
-          { pop$ s #1 "{ll}" format.name$ #3 text.prefix$ }
+          { pop$ s #1 "{ll}" format.name$ purify$ #3 text.prefix$ }
            'skip$
         if$
       }
